@@ -1,10 +1,15 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import styles from './page.module.css'
+import './globals.css'
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <h1 className="text-2xl font-bold text-blue-600 mb-4">
+          Tailwind is Working!
+        </h1>
+
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -15,7 +20,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>src/app/page.tsx</code>.
+            HEHE <code>src/app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -91,5 +96,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  );
+  )
 }
