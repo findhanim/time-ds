@@ -159,40 +159,58 @@
   /* Typography Sizes */
   /* Display */
   .font-display-lg {
+    @apply font-bold;
+
     font-size: 56px;
     line-height: 64px;
   }
   .font-display-md {
+    @apply font-bold;
+
     font-size: 44px;
     line-height: 52px;
   }
   .font-display-sm {
+    @apply font-bold;
+
     font-size: 36px;
     line-height: 44px;
   }
   /* Headline */
   .font-headline-lg {
+    @apply font-bold;
+
     font-size: 32px;
     line-height: 40px;
   }
   .font-headline-md {
+    @apply font-bold;
+
     font-size: 28px;
     line-height: 36px;
   }
   .font-headline-sm {
+    @apply font-bold;
+
     font-size: 24px;
     line-height: 32px;
   }
   /* Title */
   .font-title-lg {
+    @apply font-bold;
+
     font-size: 22px;
     line-height: 26px;
   }
   .font-title-md {
+    @apply font-bold;
+
     font-size: 18px;
     line-height: 24px;
   }
   .font-title-sm {
+    @apply font-bold;
+
     font-size: 14px;
     line-height: 20px;
   }
