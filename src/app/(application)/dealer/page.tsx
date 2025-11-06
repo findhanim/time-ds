@@ -35,7 +35,7 @@ const personalInfoData = [
 
 export default function TestPage() {
   return (
-    <div className="min-h-screen bg-neutral-0 p-5">
+    <div className="w-[30%] min-h-screen bg-neutralVariant-10 p-5">
       {/* Top bar */}
       <AppBar
         headlineSize="medium"
@@ -45,18 +45,21 @@ export default function TestPage() {
         supportingText="Supporting text"
       />
       {/* Alert banner */}
-      <Alert
-        variant="warning"
-        title="Time ID not activated"
-        message="It appears this ID is already registered but not yet active. An activation email will be sent to the customer."
-        // actionText="Action"
-      />
+      <div className="mb-spacing-24">
+        <Alert
+          variant="warning"
+          title="Time ID not activated"
+          message="It appears this ID is already registered but not yet active. An activation email will be sent to the customer."
+          // actionText="Action"
+        />
+      </div>
 
       {/* Info fields */}
       {personalInfoData.map((data, index) => (
         <TextField
           key={index}
           variant="filled"
+          margin={12}
           labelText={data.labelText}
           inputText={data.inputText}
           supportingText={data.supportingText}

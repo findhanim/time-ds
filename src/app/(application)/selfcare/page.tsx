@@ -1,6 +1,6 @@
 // Icons
 import 'material-icons/iconfont/material-icons.css'
-import InfoIcon from '@mui/icons-material/Info'
+import WifiIcon from '@mui/icons-material/Wifi'
 // Components
 import { Alert } from '../../components/Alert'
 import { TextField } from '../../components/TextField'
@@ -76,17 +76,17 @@ export default function TestPage() {
           </div>
 
           {/* Header */}
-          <p className="font-SOT font-headline-lg mb-spacing-32">
+          <p className="font-SOT font-headline-lg mb-spacing-40">
             Terminate Service
           </p>
 
           {/* Title */}
           <div className="flex">
-            <InfoIcon fontSize="small" className="mr-spacing-8" />
+            <WifiIcon className="mr-spacing-12" />
             <p className="font-title-md mb-spacing-12">Your Account Details</p>
           </div>
           {/* Container */}
-          <div className="bg-neutral-0 p-spacing-16 md:p-spacing-24 rounded-24 mb-spacing-24">
+          <div className="bg-neutral-0 rounded-24 p-spacing-16 md:p-spacing-24">
             {/* Info fields */}
             <div className="grid md:grid-cols-2 md:gap-x-spacing-16">
               {accountData.map((data, index) => (
@@ -106,6 +106,7 @@ export default function TestPage() {
                 <TextField
                   key={index}
                   variant="outlined"
+                  margin={24}
                   labelText={data.labelText}
                   inputText={data.inputText}
                   // supportingText={data.supportingText}
@@ -118,16 +119,18 @@ export default function TestPage() {
           </div>
 
           {/* Alert banner */}
-          <Alert
-            variant="info"
-            title="Important Note"
-            message="It appears this ID is already registered but not yet active. 
+          <div className="mt-spacing-24">
+            <Alert
+              variant="info"
+              title="Important Note"
+              message="It appears this ID is already registered but not yet active. 
         An activation email will be sent to the customer."
-            // actionText="Action"
-          />
+              // actionText="Action"
+            />
+          </div>
 
           {/* Footer */}
-          <div className="flex justify-between mt-[32px]">
+          <div className="flex justify-between mt-spacing-32">
             <button className="button-outlined button-md w-25">Back</button>
             <button className="button-filled button-md w-50">Next</button>
           </div>

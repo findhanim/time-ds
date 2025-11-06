@@ -24,7 +24,7 @@ export const AppBar: React.FC<AppBarProps> = ({
       <div className="flex justify-between items-center">
         {/* Leading Icon */}
         {leadingIcon && (
-          <div className="bg-neutral-10 rounded-full">
+          <div className="bg-neutralVariant-20 rounded-full">
             <BackIcon className="m-spacing-8" />
           </div>
         )}
@@ -38,7 +38,7 @@ export const AppBar: React.FC<AppBarProps> = ({
 
         {/* Trailing Icon */}
         {trailingIcon && (
-          <div className="bg-neutral-10 rounded-full">
+          <div className="bg-neutralVariant-20 rounded-full">
             <CloseIcon className="m-spacing-8" />
           </div>
         )}

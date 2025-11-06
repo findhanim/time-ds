@@ -6,6 +6,7 @@ import DropdownIcon from '@mui/icons-material/ChevronRight'
 interface TextFieldProps {
   variant?: 'outlined' | 'filled'
   state?: 'default' | 'disabled' | 'focused' | 'error'
+  margin?: number
   labelText?: string
   inputText?: string
   supportingText?: string
@@ -17,6 +18,7 @@ interface TextFieldProps {
 export const TextField: React.FC<TextFieldProps> = ({
   variant = 'outlined',
   state = 'default',
+  margin = 0,
   labelText,
   inputText = '',
   supportingText,
@@ -44,7 +46,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   const supportingColor = isError ? 'text-red-50' : 'text-neutralVariant-80'
 
   return (
-    <div className="my-[12px]">
+    <div className={`mb-spacing-${margin}`}>
       {/* Top Label (only if labelText is passed and outlined variant) */}
       {isOutlined && labelText && (
         <div className="flex items-center pb-spacing-4">
