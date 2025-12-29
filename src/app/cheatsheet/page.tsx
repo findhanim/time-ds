@@ -1,11 +1,17 @@
+"use client";
+import React, { useState } from "react";
 // Icons
-import 'material-icons/iconfont/material-icons.css'
+import "material-icons/iconfont/material-icons.css";
 // Components
-import { Alert } from '../components/Alert'
-import { AppBar } from '../components/AppBar'
-import { TextField } from '../components/TextField'
+import { Alert } from "../components/Alert";
+import { AppBar } from "../components/AppBar";
+import { RadioButton } from "../components/RadioButton";
+import { TextField } from "../components/TextField";
+import { Tag } from "../components/Tag";
 
 export default function TestPage() {
+  const [selected, setSelected] = useState<string>("option1");
+
   return (
     <div className="min-h-screen bg-neutralVariant-0 p-5">
       <hr />
@@ -442,6 +448,7 @@ export default function TestPage() {
           </div>
         </div>
       </div>
+
       {/* Components */}
       <hr />
       {/* Alert */}
@@ -605,6 +612,167 @@ export default function TestPage() {
         </div>
       </div>
       <hr />
+      {/* Radio Button  */}
+      <div className="my-8">
+        <span className="flex font-SOT font-headline-md my-8">
+          Radio Button
+        </span>
+        {/* States */}
+        <span className="font-label-md">States</span>
+        <div className="bg-content flex-col">
+          {/* Enabled */}
+          <span className="font-label-sm">Enabled (Default)</span>
+          <div className="bg-section flex gap-8">
+            <RadioButton
+              name="nationality"
+              value="option1"
+              label="Label"
+              checked={selected === "option1"}
+              onChange={setSelected}
+            />
+            <RadioButton
+              name="nationality"
+              value="option2"
+              label="Label"
+              checked={selected === "option2"}
+              onChange={setSelected}
+            />
+          </div>
+          {/* Disabled */}
+          <span className="font-label-sm">Disabled</span>
+          <div className="bg-section flex gap-8">
+            <RadioButton
+              name="nationality"
+              value="option1"
+              label="Label"
+              checked={selected === "option1"}
+              onChange={setSelected}
+              disabled
+            />
+            <RadioButton
+              name="nationality"
+              value="option2"
+              label="Label"
+              checked={selected === "option2"}
+              onChange={setSelected}
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      {/* Tag */}
+      <div className="my-8">
+        <span className="flex font-SOT font-headline-md my-8">Tag</span>
+        {/* Sizes */}
+        <span className="font-label-md">Sizes</span>
+        <div className="bg-content items-start">
+          <Tag
+            label="Status Tag (SM)"
+            variant="default"
+            style="bold"
+            size="sm"
+            leadingIcon
+          />
+          <Tag
+            label="Status Tag (MD)"
+            variant="default"
+            style="bold"
+            size="md"
+            leadingIcon
+          />
+          <Tag
+            label="Status Tag (MD)"
+            variant="default"
+            style="bold"
+            size="lg"
+            leadingIcon
+          />
+        </div>
+        {/* Variants */}
+        <span className="font-label-md">Styles</span>
+        <div className="bg-content flex-col">
+          {/* Subtle */}
+          <span className="font-label-sm">Subtle</span>
+          <div className="bg-section flex">
+            <Tag
+              label="Default"
+              variant="default"
+              style="subtle"
+              size="md"
+              leadingIcon
+            />
+            <Tag
+              label="Info"
+              variant="info"
+              style="subtle"
+              size="md"
+              leadingIcon
+            />
+            <Tag
+              label="Success"
+              variant="success"
+              style="subtle"
+              size="md"
+              leadingIcon
+            />
+            <Tag
+              label="Warning"
+              variant="warning"
+              style="subtle"
+              size="md"
+              leadingIcon
+            />
+            <Tag
+              label="Error"
+              variant="error"
+              style="subtle"
+              size="md"
+              leadingIcon
+            />
+          </div>
+          {/* Bold */}
+          <span className="font-label-sm">Bold</span>
+          <div className="bg-section flex">
+            <Tag
+              label="Default"
+              variant="default"
+              style="bold"
+              size="md"
+              trailingIcon
+            />
+            <Tag
+              label="Info"
+              variant="info"
+              style="bold"
+              size="md"
+              trailingIcon
+            />
+            <Tag
+              label="Success"
+              variant="success"
+              style="bold"
+              size="md"
+              trailingIcon
+            />
+            <Tag
+              label="Warning"
+              variant="warning"
+              style="bold"
+              size="md"
+              trailingIcon
+            />
+            <Tag
+              label="Error"
+              variant="error"
+              style="bold"
+              size="md"
+              trailingIcon
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
       {/* Text Field */}
       <div className="my-8">
         <span className="flex font-SOT font-headline-md my-8">Text Field</span>
@@ -734,5 +902,5 @@ export default function TestPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

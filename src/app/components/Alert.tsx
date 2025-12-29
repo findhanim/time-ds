@@ -1,72 +1,71 @@
-import React from 'react'
+import React from "react";
 // Icons
-import 'material-icons/iconfont/material-icons.css'
+import "material-icons/iconfont/material-icons.css";
+import InfoIcon from "@mui/icons-material/Info";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import WarningAmberIcon from "@mui/icons-material/WarningAmber";
+import ErrorIcon from "@mui/icons-material/Error";
 
-import InfoIcon from '@mui/icons-material/Info'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import WarningAmberIcon from '@mui/icons-material/WarningAmber'
-import ErrorIcon from '@mui/icons-material/Error'
-
-type AlertVariant = 'info' | 'positive' | 'negative' | 'warning'
+type AlertVariant = "info" | "positive" | "negative" | "warning";
 
 interface AlertProps {
-  title: string
-  message: string
-  actionText?: string
-  onActionClick?: () => void
-  variant?: AlertVariant
-  className?: string
+  title: string;
+  message: string;
+  actionText?: string;
+  onActionClick?: () => void;
+  variant?: AlertVariant;
+  className?: string;
 }
 
 const variantStyles: Record<
   AlertVariant,
   {
-    bg: string
-    border: string
-    iconColor: string
-    iconName: string
-    Icon: React.ElementType
+    bg: string;
+    border: string;
+    iconColor: string;
+    iconName: string;
+    Icon: React.ElementType;
   }
 > = {
   info: {
-    bg: 'bg-neutralVariant-20',
-    border: 'border-lilac-50',
-    iconName: 'info',
-    iconColor: 'text-lilac-50',
+    bg: "bg-neutralVariant-20",
+    border: "border-lilac-50",
+    iconName: "info",
+    iconColor: "text-lilac-50",
     Icon: InfoIcon,
   },
   positive: {
-    bg: 'bg-green-20',
-    border: 'border-green-70',
-    iconName: 'check_circle',
-    iconColor: 'text-green-70',
+    bg: "bg-green-20",
+    border: "border-green-70",
+    iconName: "check_circle",
+    iconColor: "text-green-70",
     Icon: CheckCircleIcon,
   },
   warning: {
-    bg: 'bg-yellow-20',
-    border: 'border-yellow-70',
-    iconName: 'warning',
-    iconColor: 'text-yellow-70',
+    bg: "bg-yellow-20",
+    border: "border-yellow-70",
+    iconName: "warning",
+    iconColor: "text-yellow-70",
     Icon: WarningAmberIcon,
   },
   negative: {
-    bg: 'bg-red-20',
-    border: 'border-red-60',
-    iconName: 'error',
-    iconColor: 'text-red-60',
+    bg: "bg-red-20",
+    border: "border-red-60",
+    iconName: "error",
+    iconColor: "text-red-60",
     Icon: ErrorIcon,
   },
-}
+};
 
 export const Alert: React.FC<AlertProps> = ({
   title,
   message,
   actionText,
   onActionClick,
-  variant = 'info',
-  className = '',
+  variant = "info",
+  className = "",
 }) => {
-  const { bg, border, iconName, iconColor } = variantStyles[variant]
+  const { bg, border, iconName, iconColor } = variantStyles[variant];
 
   return (
     <div className={`${bg} border-1 ${border} rounded-12 p-4 ${className}`}>
@@ -94,5 +93,5 @@ export const Alert: React.FC<AlertProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

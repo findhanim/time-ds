@@ -1,23 +1,24 @@
-import React from 'react'
-import BackIcon from '@mui/icons-material/ChevronLeft'
-import CloseIcon from '@mui/icons-material/CloseRounded'
+import React from "react";
+// Icons
+import BackIcon from "@mui/icons-material/ChevronLeft";
+import CloseIcon from "@mui/icons-material/CloseRounded";
 
 interface AppBarProps {
-  headlineSize?: 'small' | 'medium'
-  headlineText?: string
-  supportingText?: string
-  leadingIcon?: boolean
-  trailingIcon?: boolean
+  headlineSize?: "small" | "medium";
+  headlineText?: string;
+  supportingText?: string;
+  leadingIcon?: boolean;
+  trailingIcon?: boolean;
 }
 
 export const AppBar: React.FC<AppBarProps> = ({
-  headlineSize = 'small',
-  headlineText = 'Headline',
+  headlineSize = "small",
+  headlineText = "Headline",
   supportingText,
   leadingIcon = false,
   trailingIcon = false,
 }) => {
-  const isSmall = headlineSize === 'small'
+  const isSmall = headlineSize === "small";
 
   return (
     <div className="mb-spacing-32">
@@ -56,5 +57,5 @@ export const AppBar: React.FC<AppBarProps> = ({
         <span className="font-body-sm mt-spacing-4">{supportingText}</span>
       )}
     </div>
-  )
-}
+  );
+};

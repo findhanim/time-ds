@@ -1,49 +1,51 @@
-import React from 'react'
-import InfoIcon from '@mui/icons-material/Info'
-import PersonIcon from '@mui/icons-material/Person'
-import DropdownIcon from '@mui/icons-material/ChevronRight'
+import React from "react";
+
+// Icons
+import InfoIcon from "@mui/icons-material/Info";
+import PersonIcon from "@mui/icons-material/Person";
+import DropdownIcon from "@mui/icons-material/ChevronRight";
 
 interface TextFieldProps {
-  variant?: 'outlined' | 'filled'
-  state?: 'default' | 'disabled' | 'focused' | 'error'
-  margin?: number
-  labelText?: string
-  inputText?: string
-  supportingText?: string
-  leadingIcon?: boolean
-  trailingIcon?: boolean
-  infoIcon?: boolean
+  variant?: "outlined" | "filled";
+  state?: "default" | "disabled" | "focused" | "error";
+  margin?: number;
+  labelText?: string;
+  inputText?: string;
+  supportingText?: string;
+  leadingIcon?: boolean;
+  trailingIcon?: boolean;
+  infoIcon?: boolean;
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
-  variant = 'outlined',
-  state = 'default',
+  variant = "outlined",
+  state = "default",
   margin = 0,
   labelText,
-  inputText = '',
+  inputText = "",
   supportingText,
   leadingIcon = false,
   trailingIcon = false,
   infoIcon = false,
 }) => {
-  const isOutlined = variant === 'outlined'
-  const isDisabled = state === 'disabled'
-  const isFocused = state === 'focused'
-  const isError = state === 'error'
+  const isOutlined = variant === "outlined";
+  const isDisabled = state === "disabled";
+  const isFocused = state === "focused";
+  const isError = state === "error";
 
   const borderColor = isError
-    ? 'border-red-50'
+    ? "border-red-50"
     : isDisabled
-    ? 'border-neutral-20'
+    ? "border-neutral-20"
     : isFocused
-    ? 'border-pink-50'
+    ? "border-pink-50"
     : isOutlined
-    ? 'border-neutral-100'
-    : 'border-neutralVariant-40'
+    ? "border-neutral-100"
+    : "border-neutralVariant-40";
 
-  const textColor = isDisabled ? 'text-neutral-100' : 'text-neutral-100'
-  const labelColor = isDisabled ? 'text-neutral-70' : 'text-neutral-70'
-  const supportingColor = isError ? 'text-red-50' : 'text-neutralVariant-80'
+  const textColor = isDisabled ? "text-neutral-100" : "text-neutral-100";
+  const labelColor = isDisabled ? "text-neutral-70" : "text-neutral-70";
+  const supportingColor = isError ? "text-red-50" : "text-neutralVariant-80";
 
   return (
     <div className={`mb-spacing-${margin}`}>
@@ -63,8 +65,8 @@ export const TextField: React.FC<TextFieldProps> = ({
       {/* Container */}
       <div
         className={`border-[1.5px] rounded-12 p-spacing-16 ${
-          isOutlined ? 'py-spacing-16' : 'py-spacing-8'
-        } ${borderColor} ${isDisabled ? 'bg-neutral-20' : 'bg-neutral-0'}`}
+          isOutlined ? "py-spacing-16" : "py-spacing-8"
+        } ${borderColor} ${isDisabled ? "bg-neutral-20" : "bg-neutral-0"}`}
       >
         <div className="flex items-center">
           {/* Leading Icon */}
@@ -72,7 +74,7 @@ export const TextField: React.FC<TextFieldProps> = ({
             <PersonIcon
               fontSize="small"
               className={`mr-spacing-8 ${
-                isDisabled ? 'text-neutral-80' : 'text-neutral-80'
+                isDisabled ? "text-neutral-80" : "text-neutral-80"
               }`}
             />
           )}
@@ -96,7 +98,7 @@ export const TextField: React.FC<TextFieldProps> = ({
                 <DropdownIcon
                   fontSize="small"
                   className={`ml-spacing-8 ${
-                    isError ? 'text-error' : 'text-neutral-80'
+                    isError ? "text-error" : "text-neutral-80"
                   }`}
                 />
               )}
@@ -112,5 +114,5 @@ export const TextField: React.FC<TextFieldProps> = ({
         </span>
       )}
     </div>
-  )
-}
+  );
+};

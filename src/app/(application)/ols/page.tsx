@@ -1,39 +1,39 @@
 // Icons
-import 'material-icons/iconfont/material-icons.css'
-import PersonIcon from '@mui/icons-material/PersonOutlined'
+import "material-icons/iconfont/material-icons.css";
+import PersonIcon from "@mui/icons-material/PersonOutlined";
 // Components
-import { Alert } from '../../components/Alert'
-import { TextField } from '../../components/TextField'
+import { Alert } from "../../components/Alert";
+import { TextField } from "../../components/TextField";
 
 const reasonData = [
   {
-    labelText: 'Select ID type',
-    inputText: 'MyKad',
+    labelText: "Select ID type",
+    inputText: "MyKad",
     trailingIcon: true,
   },
   {
-    labelText: 'Title (Optional)',
-    inputText: 'Dato',
+    labelText: "Title (Optional)",
+    inputText: "Dato",
     trailingIcon: true,
   },
   {
-    labelText: 'Full name',
-    inputText: 'John Doe',
-    supportingText: 'Enter your name as per in your NRIC',
+    labelText: "Full name",
+    inputText: "John Doe",
+    supportingText: "Enter your name as per in your NRIC",
   },
   {
-    labelText: 'ID number',
-    inputText: '880818-08-5660',
+    labelText: "ID number",
+    inputText: "880818-08-5660",
   },
   {
-    state: 'disabled',
-    labelText: 'Email',
-    inputText: 'john@email.com',
+    state: "disabled",
+    labelText: "Email",
+    inputText: "john@email.com",
     trailingIcon: true,
     supportingText:
-      'Time ID is your Selfcare login to manage your internet. For new customers, this email becomes your Time ID. For returning customers, use it to verify your Time ID',
+      "Time ID is your Selfcare login to manage your internet. For new customers, this email becomes your Time ID. For returning customers, use it to verify your Time ID",
   },
-]
+];
 
 export default function TestPage() {
   return (
@@ -74,7 +74,7 @@ export default function TestPage() {
               <div className="font-label-sm text-neutral-70 mb-spacing-4">
                 Nationality
               </div>
-              <div className="flex gap-spacing-8">
+              <div className="flex gap-spacing-8 mb-5">
                 <div className="w-50 border-[3px] bg-pink-10 border-pink-50 rounded-12 p-spacing-16 text-center">
                   Malaysian
                 </div>
@@ -114,5 +114,5 @@ export default function TestPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
