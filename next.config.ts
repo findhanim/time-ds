@@ -1,12 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/time-ds" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/time-ds/" : "",
+import { NextConfig } from "next";
 
-  images: {
-    unoptimized: true,
-  },
+const isProd = process.env.NODE_ENV === "production";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: isProd ? "/time-ds" : "",
+  assetPrefix: isProd ? "/time-ds/" : "",
+  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
