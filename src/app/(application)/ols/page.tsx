@@ -46,7 +46,7 @@ export default function TestPage() {
       <div className="md:pt-[60px] mx-spacing-16 md:px-spacing-120 py-spacing-120 ">
         {/* Header */}
         <p className="font-SOT font-headline-lg my-spacing-40">
-          Let's Get Personal
+          Lets Get Personal
         </p>
 
         {/* Title */}

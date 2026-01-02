@@ -7,7 +7,7 @@ import DropdownIcon from "@mui/icons-material/ChevronRight";
 
 interface TextFieldProps {
   variant?: "outlined" | "filled";
-  state?: "default" | "disabled" | "focused" | "error";
+  state?: string | undefined;
   margin?: number;
   labelText?: string;
   inputText?: string;
@@ -53,12 +53,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       {isOutlined && labelText && (
         <div className="flex items-center pb-spacing-4">
           <span className={`font-label-sm ${labelColor}`}>{labelText}</span>
-          {infoIcon && (
-            <InfoIcon
-              fontSize="xsmall"
-              className="ml-spacing-4 text-lightBlue-80"
-            />
-          )}
+          {infoIcon && <InfoIcon className="ml-spacing-4 text-lightBlue-80" />}
         </div>
       )}
 

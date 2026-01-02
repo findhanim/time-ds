@@ -5,7 +5,7 @@ import CheckIcon from "@mui/icons-material/CheckCircleOutline";
 import WarningIcon from "@mui/icons-material/WarningAmberOutlined";
 import ErrorIcon from "@mui/icons-material/ErrorOutline";
 
-type SnackbarVariant = "default" | "positive" | "negative" | "warning";
+export type SnackbarVariant = "default" | "positive" | "negative" | "warning";
 
 interface SnackbarProps {
   message: string;
@@ -54,7 +54,7 @@ export const Snackbar: React.FC<SnackbarProps> = ({
   message,
   actionText,
   onActionClick,
-  variant = "info",
+  variant = "default",
   className = "",
 }) => {
   const { bg, Icon, iconColor, textColor } = snackbarVariant[variant];

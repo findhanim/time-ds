@@ -1,34 +1,38 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tailwindcss";
 
 /* Sans Of Time */
 @font-face {
-  font-family: 'SansofTime-Bold';
-  src: url('/fonts/SansofTime-Bold.otf') format('opentype');
+  font-family: "SansofTime-Bold";
+  src: url("/fonts/SansofTime-Bold.otf") format("opentype");
 }
 /* Work Sans */
 @font-face {
-  font-family: 'WorkSans-Regular';
-  src: url('/fonts/WorkSans-Regular.ttf') format('truetype');
+  font-family: "WorkSans-Regular";
+  src: url("/fonts/WorkSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'WorkSans-Medium';
-  src: url('/fonts/WorkSans-Medium.ttf') format('truetype');
+  font-family: "WorkSans-Medium";
+  src: url("/fonts/WorkSans-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
-  font-family: 'WorkSans-SemiBold';
-  src: url('/fonts/WorkSans-SemiBold.ttf') format('truetype');
+  font-family: "WorkSans-SemiBold";
+  src: url("/fonts/WorkSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 
 @theme {
   /* Typography */
   /* Font Family */
-  --font-default: 'WorkSans-Regular', sans-serif;
-  --font-medium: 'WorkSans-Medium', sans-serif;
-  --font-bold: 'WorkSans-SemiBold', sans-serif;
-  --font-SOT: 'SansofTime-Bold', sans-serif;
+  --font-default: "WorkSans-Regular", sans-serif;
+  --font-medium: "WorkSans-Medium", sans-serif;
+  --font-bold: "WorkSans-SemiBold", sans-serif;
+  --font-SOT: "SansofTime-Bold", sans-serif;
 
   /* Colors */
   /* Neutral */
