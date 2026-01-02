@@ -15,7 +15,7 @@ interface TagProps {
   trailingIcon?: boolean;
 }
 
-const VARIANT_STYLES: Record<
+const tagVariant: Record<
   TagVariant,
   {
     subtle: string;
@@ -44,7 +44,7 @@ const VARIANT_STYLES: Record<
   },
 };
 
-const SIZE_STYLES: Record<TagSize, string> = {
+const tagSize: Record<TagSize, string> = {
   sm: "px-2 py-0.5 text-xs",
   md: "px-3 py-1 text-sm",
   lg: "px-4 py-1.5 text-md",
@@ -61,8 +61,8 @@ export const Tag: React.FC<TagProps> = ({
   return (
     <div
       className={`inline-flex items-center rounded-8 gap-1
-        ${VARIANT_STYLES[variant][style]}
-        ${SIZE_STYLES[size]}
+        ${tagVariant[variant][style]}
+        ${tagSize[size]}
       `}
     >
       {leadingIcon && <CheckIcon fontSize="small" className="mr-1" />}

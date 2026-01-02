@@ -1,69 +1,66 @@
 import React from "react";
 // Icons
-import "material-icons/iconfont/material-icons.css";
 import InfoIcon from "@mui/icons-material/InfoOutline";
 import CheckIcon from "@mui/icons-material/CheckCircleOutline";
 import WarningIcon from "@mui/icons-material/WarningAmberOutlined";
 import ErrorIcon from "@mui/icons-material/ErrorOutline";
 
-type AlertVariant = "info" | "positive" | "negative" | "warning";
+type SnackbarVariant = "default" | "positive" | "negative" | "warning";
 
-interface AlertProps {
-  title: string;
+interface SnackbarProps {
   message: string;
   actionText?: string;
   onActionClick?: () => void;
-  variant?: AlertVariant;
+  variant?: SnackbarVariant;
   className?: string;
 }
 
-const alertVariant: Record<
-  AlertVariant,
+const snackbarVariant: Record<
+  SnackbarVariant,
   {
     bg: string;
-    border: string;
     iconColor: string;
+    textColor: string;
     Icon: React.ElementType;
   }
 > = {
-  info: {
-    bg: "bg-neutralVariant-20",
-    border: "border-lilac-50",
-    iconColor: "text-lilac-50",
+  default: {
+    bg: "bg-neutral-100",
+    iconColor: "text-white",
+    textColor: "text-white",
     Icon: InfoIcon,
   },
   positive: {
-    bg: "bg-green-20",
-    border: "border-green-70",
-    iconColor: "text-green-70",
+    bg: "bg-green-50",
+    iconColor: "text-neutral-100",
+    textColor: "text-neutral-100",
     Icon: CheckIcon,
   },
   warning: {
-    bg: "bg-yellow-20",
-    border: "border-yellow-70",
-    iconColor: "text-yellow-70",
+    bg: "bg-yellow-50",
+    iconColor: "text-neutral-100",
+    textColor: "text-neutral-100",
     Icon: WarningIcon,
   },
   negative: {
-    bg: "bg-red-20",
-    border: "border-red-60",
-    iconColor: "text-red-60",
+    bg: "bg-red-40",
+    iconColor: "text-neutral-100",
+    textColor: "text-neutral-100",
     Icon: ErrorIcon,
   },
 };
 
-export const Alert: React.FC<AlertProps> = ({
-  title,
+export const Snackbar: React.FC<SnackbarProps> = ({
   message,
   actionText,
   onActionClick,
   variant = "info",
   className = "",
 }) => {
-  const { bg, border, Icon, iconColor } = alertVariant[variant];
+  const { bg, Icon, iconColor, textColor } = snackbarVariant[variant];
 
   return (
-    <div className={`${bg} border-1 ${border} rounded-12 p-4 ${className}`}>
+    <div className={`${bg} rounded-12 p-4 ${className}`}>
       <div className="flex">
         {/* Icon */}
         <Icon className={`mr-spacing-8 ${iconColor}`} fontSize="small" />
@@ -71,12 +68,11 @@ export const Alert: React.FC<AlertProps> = ({
           {/* Text */}
           <div className="md:flex md:justify-between md:items-center">
             <div className="flex flex-col gap-1">
-              <span className="font-label-sm prominent">{title}</span>
-              <span className="font-body-sm">{message}</span>
+              <span className={`${textColor} font-body-sm`}>{message}</span>
             </div>
             {actionText && (
               <span
-                className="font-label-sm prominent underline cursor-pointer"
+                className={`${textColor} font-label-sm prominent underline cursor-pointer`}
                 onClick={onActionClick}
               >
                 {actionText}

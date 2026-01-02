@@ -6,7 +6,9 @@ import "material-icons/iconfont/material-icons.css";
 import { Alert } from "../components/Alert";
 import { AppBar } from "../components/AppBar";
 import { RadioButton } from "../components/RadioButton";
+import { Snackbar } from "../components/Snackbar";
 import { TextField } from "../components/TextField";
+import { Tabs } from "../components/Tabs";
 import { Tag } from "../components/Tag";
 
 export default function TestPage() {
@@ -230,7 +232,11 @@ export default function TestPage() {
           <h5 className="col-span-3 py-4 text-sm">Neutral Variant</h5>
           <div className="box-palette bg-neutralVariant-10">10</div>
           <div className="box-palette bg-neutralVariant-20">20</div>
+          <div className="box-palette bg-white">??</div>
           <div className="box-palette bg-neutralVariant-40">40</div>
+          <div className="box-palette bg-white">??</div>
+          <div className="box-palette bg-white">??</div>
+          <div className="box-palette bg-white">??</div>
           <div className="box-palette bg-neutralVariant-80">80</div>
           <div className="box-palette bg-neutralVariant-90">90</div>
         </div>
@@ -324,6 +330,15 @@ export default function TestPage() {
           <div className="box-palette bg-red-70">70</div>
           <div className="box-palette bg-red-80">80</div>
           <div className="box-palette bg-red-90">90</div>
+        </div>
+        {/* Lilac */}
+        <div className="grid grid-cols-13 my-5">
+          <h5 className="col-span-3 py-4 text-md">Red</h5>
+          <div className="box-palette bg-lilac-20">10</div>
+          <div className="box-palette bg-white">??</div>
+          <div className="box-palette bg-white">??</div>
+          <div className="box-palette bg-white">??</div>
+          <div className="box-palette bg-lilac-50">50</div>
         </div>
       </div>
       <hr />
@@ -661,6 +676,61 @@ export default function TestPage() {
         </div>
       </div>
       <hr />
+      {/* Snackbar */}
+      <div className="my-8">
+        <span className="flex font-SOT font-headline-md my-8">Snackbar</span>
+        {/* Default */}
+        <span className="font-label-md">Default</span>
+        <div className="bg-content flex-col">
+          <Snackbar
+            variant="default"
+            message="With informative supporting text."
+            actionText="Action"
+          />
+        </div>
+        {/* Positive */}
+        <span className="font-label-md">Positive</span>
+        <div className="bg-content flex-col">
+          <Snackbar
+            variant="positive"
+            message="With informative supporting text."
+            actionText="Action"
+          />
+        </div>
+        {/* Warning */}
+        <span className="font-label-md">Warning</span>
+        <div className="bg-content flex-col">
+          <Snackbar
+            variant="warning"
+            message="With informative supporting text."
+            actionText="Action"
+          />
+        </div>
+        {/* Negative */}
+        <span className="font-label-md">Negative</span>
+        <div className="bg-content flex-col">
+          <Snackbar
+            variant="negative"
+            message="With informative supporting text."
+            actionText="Action"
+          />
+        </div>
+      </div>
+      <hr />
+      {/* Tabs */}
+      <div className="my-8">
+        <span className="flex font-SOT font-headline-md my-8">Tabs</span>
+        {/* Default */}
+        <span className="font-label-md">Default</span>
+        <div className="bg-content flex-col">
+          <Tabs
+            tabs={["Item One", "Item Two"]}
+            value={0}
+            onChange={(index) => console.log("Selected tab:", index)}
+          />
+        </div>
+      </div>
+      <hr />
       {/* Tag */}
       <div className="my-8">
         <span className="flex font-SOT font-headline-md my-8">Tag</span>
@@ -682,7 +752,7 @@ export default function TestPage() {
             leadingIcon
           />
           <Tag
-            label="Status Tag (MD)"
+            label="Status Tag (LG)"
             variant="default"
             style="bold"
             size="lg"

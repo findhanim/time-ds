@@ -1,7 +1,7 @@
 import React from "react";
 
 // Icons
-import InfoIcon from "@mui/icons-material/Info";
+import InfoIcon from "@mui/icons-material/InfoOutline";
 import PersonIcon from "@mui/icons-material/Person";
 import DropdownIcon from "@mui/icons-material/ChevronRight";
 
@@ -97,7 +97,7 @@ export const TextField: React.FC<TextFieldProps> = ({
               {trailingIcon && (
                 <DropdownIcon
                   fontSize="small"
-                  className={`ml-spacing-8 ${
+                  className={`ml-spacing-8 transform rotate-90 ${
                     isError ? "text-error" : "text-neutral-80"
                   }`}
                 />
